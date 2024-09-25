@@ -500,7 +500,8 @@
                             Console.WriteLine("     | ~~~ |  ");
                             Console.WriteLine("     |R.I.P| ");
                             Console.WriteLine("     |_____| ");
-                            Console.WriteLine("사망하셨습니다");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("  사망하셨습니다.");
                             Console.ReadKey(); //콘솔창 바로 안꺼지고 키 하나 눌러야 Readlind도 가능
                             break;
                         }
@@ -526,7 +527,8 @@
                                 Console.WriteLine("     | ~~~ |  ");
                                 Console.WriteLine("     |R.I.P| ");
                                 Console.WriteLine("     |_____| ");
-                                Console.WriteLine("사망하셨습니다");
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine("  사망하셨습니다.");
                                 Console.ReadKey();
                                 break;
                             }
@@ -545,7 +547,8 @@
                             Console.WriteLine("     | ~~~ |  ");
                             Console.WriteLine("     |R.I.P| ");
                             Console.WriteLine("     |_____| ");
-                            Console.WriteLine("사망하셨습니다");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("  사망하셨습니다.");
                             Console.ReadKey();
                             break;
                         }
@@ -569,7 +572,7 @@
                         Console.WriteLine("  /\\-\\");
                         Console.WriteLine(" _||\"|_");
                         Console.WriteLine("~^~^~^~^");
-                        Console.WriteLine("\n회복을 완료하였습니다");
+                        Console.WriteLine("\n회복을 완료하였습니다.");
                         player.Hp = 100;
                         player.Gold -= 500;
                         continue;
