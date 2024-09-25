@@ -467,7 +467,7 @@
                             break;
                         default:
                             Console.WriteLine("\n잘못된 입력입니다. 마을로 돌아갑니다.");
-                            break;
+                            continue;
                     }
 
                     if (player.Def + (player.EArmor?.DefBonus ?? 0) >= recommendedDef)
