@@ -257,6 +257,7 @@
                     }
                     else if (itemIndex == 0)
                     {
+                        Console.Clear();
                         return;
                     }
                     else
@@ -267,6 +268,7 @@
                 }
                 else
                 {
+                    Console.Clear();
                     Console.WriteLine("\n그런 아이템은 없습니다. 마을로 돌아 갑니다.");
                 }
             }
