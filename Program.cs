@@ -66,10 +66,12 @@
                 if (int.TryParse(input, out int Index) && Index >= 1 && Index <= IWeapons.Count)
                 {
                     EquipWeapon(IWeapons[Index - 1]);
-                    Console.WriteLine("\n무기를 변경하였습니다");
+                    Console.Clear();
+                    Console.WriteLine("\n{0}무기를 변경하였습니다");
                 }
                 else
                 {
+                    Console.Clear();
                     Console.WriteLine("\n잘못된 입력입니다. 마을로 돌아갑니다.");
                 }
             }//무기 변경
@@ -82,10 +84,12 @@
                 if (int.TryParse(input, out int Index) && Index >= 1 && Index <= IArmors.Count)
                 {
                     EquipArmor(IArmors[Index - 1]);
+                    Console.Clear();
                     Console.WriteLine("\n방어구를 변경하였습니다");
                 }
                 else
                 {
+                    Console.Clear();
                     Console.WriteLine("\n잘못된 입력입니다. 마을로 돌아갑니다.");
                 }
             }//방어구 변경
@@ -222,12 +226,14 @@
                             player.Gold -= selectedWeapon.Price;
                             player.EquipWeapon(selectedWeapon);
                             player.IWeapons.Add(selectedWeapon);
-                            Console.WriteLine($"\n{selectedWeapon.Name}을(를) 구매했습니다.");
                             Weapons.RemoveAt(itemIndex - 1);
+                            Console.Clear();
+                            Console.WriteLine($"\n{selectedWeapon.Name}을(를) 구매했습니다.");
                         }
                         else
                         {
-                            Console.WriteLine("\n골드가 부족합니다.");
+                            Console.Clear();
+                            Console.WriteLine("\n골드가 부족합니다. 마을로 돌아 갑니다.");
                         }
                     }
                     else if (itemIndex >= Weapons.Count + 1 && itemIndex <= Weapons.Count + Armors.Count)
@@ -238,11 +244,14 @@
                             player.Gold -= selectedArmor.Price;
                             player.EquipArmor(selectedArmor);
                             player.IArmors.Add(selectedArmor);
-                            Console.WriteLine($"\n{selectedArmor.Name}을(를) 구매했습니다.");
                             Armors.RemoveAt(itemIndex - Weapons.Count - 1);
+                            Console.Clear();
+                            Console.WriteLine($"\n{selectedArmor.Name}을(를) 구매했습니다.");
+
                         }
                         else
                         {
+                            Console.Clear();
                             Console.WriteLine("\n골드가 부족합니다. 마을로 돌아 갑니다.");
                         }
                     }
@@ -252,8 +261,8 @@
                     }
                     else
                     {
+                        Console.Clear();
                         Console.WriteLine("\n그런 아이템은 없습니다. 마을로 돌아 갑니다.");
-
                     }
                 }
                 else
@@ -274,6 +283,9 @@
 
         static void Main(string[] args) //게임 관련
         {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Title = "Sparta_RPG";
+
             Character player = new Character("", "", 0, 0, 0, 0, 0, 0, 0, 0);
             Character monster = new Character("", "", 0, 0, 0, 0, 0, 0, 0, 0);
 
@@ -379,6 +391,7 @@
                     }
                     else
                     {
+                        Console.Clear();
                         Console.WriteLine("\n잘못된 입력입니다. 마을로 돌아갑니다.");
                         continue;
                     }
@@ -409,6 +422,7 @@
                     }
                     else
                     {
+                        Console.Clear();
                         Console.WriteLine("\n잘못된 입력입니다. 마을로 돌아갑니다.");
                         continue;
                     }
@@ -468,6 +482,7 @@
                             damge = new Random().Next(20 + recommendedDef - (player.Def + (player.EArmor?.DefBonus ?? 0)), 35 + recommendedDef - (player.Def + (player.EArmor?.DefBonus ?? 0)));
                             break;
                         default:
+                            Console.Clear();
                             Console.WriteLine("\n잘못된 입력입니다. 마을로 돌아갑니다.");
                             continue;
                     }
@@ -489,6 +504,7 @@
                             Console.ReadKey(); //콘솔창 바로 안꺼지고 키 하나 눌러야 Readlind도 가능
                             break;
                         }
+                        Console.Clear();
                         Console.WriteLine("\n던전 클리어!");
                         Console.WriteLine($"경험치 {expReward} 획득");
                         Console.WriteLine($"골드 {goldReward} 획득");
@@ -514,6 +530,7 @@
                                 Console.ReadKey();
                                 break;
                             }
+                            Console.Clear();
                             Console.WriteLine($"\n던전 클리어 실패! 체력 {failDamage} 감소");
                             continue;
                         }
@@ -532,6 +549,7 @@
                             Console.ReadKey();
                             break;
                         }
+                        Console.Clear();
                         Console.WriteLine("\n던전 클리어!");
                         Console.WriteLine($"경험치 {expReward} 획득");
                         Console.WriteLine($"골드 {goldReward} 획득");
@@ -545,6 +563,7 @@
                 {
                     if (player.Gold >= 500)
                     {
+                        Console.Clear();
                         Console.WriteLine("\n   +");
                         Console.WriteLine("   A_");
                         Console.WriteLine("  /\\-\\");
@@ -557,12 +576,14 @@
                     }
                     else
                     {
+                        Console.Clear();
                         Console.WriteLine("\n골드가 부족합니다(500 골드 소모)");
                         continue;
                     }
                 }//휴식기능
                 else
                 {
+                    Console.Clear();
                     Console.WriteLine("\n잘못된 입력입니다. 마을로 돌아갑니다.");
                     continue;
                 }
