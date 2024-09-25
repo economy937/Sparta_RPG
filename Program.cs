@@ -497,6 +497,7 @@
                         player.Hp -= Math.Max(damge, 0);
                         if (player.Hp <= 0)
                         {
+                            Console.Clear();
                             Console.WriteLine("      ,-=-.     ");
                             Console.WriteLine("     /  +  \\   ");
                             Console.WriteLine("     | ~~~ |  ");
@@ -524,6 +525,7 @@
                             player.Hp -= failDamage;
                             if (player.Hp <= 0)
                             {
+                                Console.Clear();
                                 Console.WriteLine("      ,-=-.     ");
                                 Console.WriteLine("     /  +  \\   ");
                                 Console.WriteLine("     | ~~~ |  ");
@@ -544,6 +546,7 @@
                         player.Hp -= Math.Max(damge, 0);
                         if (player.Hp <= 0)
                         {
+                            Console.Clear();
                             Console.WriteLine("      ,-=-.     ");
                             Console.WriteLine("     /  +  \\   ");
                             Console.WriteLine("     | ~~~ |  ");
