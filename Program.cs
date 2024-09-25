@@ -67,7 +67,7 @@
                 {
                     EquipWeapon(IWeapons[Index - 1]);
                     Console.Clear();
-                    Console.WriteLine("\n{0}무기를 변경하였습니다");
+                    Console.WriteLine("\n무기를 변경하였습니다");
                 }
                 else
                 {
