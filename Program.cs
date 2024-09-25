@@ -322,10 +322,7 @@
                     job = "전사";
                     //string name, string job, int level, int exp, int att, int def, int hp, int gold 순서
                     player.AddStats(name, job, 1, 0, 10, 5, 100, 1500);
-                    Console.WriteLine("            /\\");
-                    Console.WriteLine("/vvvvvvvvvvvv \\--------------------------------------,");
-                    Console.WriteLine("`^^^^^^^^^^^^ /=====================================\"");
-                    Console.WriteLine("            \\/");
+                    Console.Clear();
                     break;
                 }
 
@@ -334,9 +331,7 @@
                     //string name, string job, int level, int exp, int att, int def, int hp, int gold 순서
                     job = "도적";
                     player.AddStats(name, job, 1, 0, 12, 4, 80, 1500);
-                    Console.WriteLine("     /");
-                    Console.WriteLine("*////{<>========-");
-                    Console.WriteLine("     \\");
+                    Console.Clear();
                     break;
                 }
 
@@ -345,7 +340,7 @@
                     //string name, string job, int level, int exp, int att, int def, int hp, int gold 순서
                     job = "마법사";
                     player.AddStats(name, job, 1, 0, 15, 3, 60, 1500);
-                    Console.WriteLine("(∩^o^)⊃━☆ﾟ.*☆");
+                    Console.Clear();
                     break;
                 }
 
@@ -372,12 +367,14 @@
 
                 if (chooseNum == "1")
                 {
+                    Console.Clear();
                     player.ShowStats();
                     Console.WriteLine("0.나가기\n");
                     Console.Write("원하시는 행동을 입력해주세요.\n>>");
                     chooseNum = Console.ReadLine();
                     if (chooseNum == "0")
                     {
+                        Console.Clear();
                         continue;
                     }
                     else
@@ -389,6 +386,7 @@
 
                 if (chooseNum == "2")
                 {
+                    Console.Clear();
                     Console.WriteLine("\n[보유중인 장비]\n");
                     player.ShowWeapons();
                     Console.WriteLine("\n0.나가기    1.무기변경    2.방어구변경\n");
@@ -406,6 +404,7 @@
                     }
                     else if (chooseNum == "0")
                     {
+                        Console.Clear();
                         continue;
                     }
                     else
@@ -417,12 +416,14 @@
 
                 if (chooseNum == "3")
                 {
+                    Console.Clear();
                     shop.BuyItem(player);
                     continue;
                 }//상점 기능
 
                 if (chooseNum == "4")
                 {
+                    Console.Clear();
                     Console.WriteLine("\n던전에 입장합니다. 난이도를 선택하세요.");
                     Console.WriteLine("1. 쉬움 (권장 방어력 5)");
                     Console.WriteLine("2. 보통 (권장 방어력 11)");
@@ -433,6 +434,7 @@
                     chooseNum = Console.ReadLine();
                     if (chooseNum == "0")
                     {
+                        Console.Clear();
                         continue;
                     }
 
