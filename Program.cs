@@ -222,8 +222,6 @@
                             player.Gold -= selectedWeapon.Price;
                             player.EquipWeapon(selectedWeapon);
                             player.IWeapons.Add(selectedWeapon);
-                            Console.WriteLine("Item Index: " + itemIndex);
-                            Console.WriteLine("Weapons Count: " + Weapons.Count);
                             Console.WriteLine($"\n{selectedWeapon.Name}을(를) 구매했습니다.");
                             Weapons.RemoveAt(itemIndex - 1);
                         }
@@ -469,7 +467,7 @@
                             break;
                         default:
                             Console.WriteLine("\n잘못된 입력입니다. 마을로 돌아갑니다.");
-                            continue;
+                            break;
                     }
 
                     if (player.Def + (player.EArmor?.DefBonus ?? 0) >= recommendedDef)
@@ -487,13 +485,14 @@
                             Console.WriteLine("     |_____| ");
                             Console.WriteLine("사망하셨습니다");
                             Console.ReadKey(); //콘솔창 바로 안꺼지고 키 하나 눌러야 Readlind도 가능
-                            break; //브레이크 댄스
+                            break;
                         }
                         Console.WriteLine("\n던전 클리어!");
                         Console.WriteLine($"경험치 {expReward} 획득");
                         Console.WriteLine($"골드 {goldReward} 획득");
                         Console.WriteLine($"추가 골드 {extraGold} 획득");
                         Console.WriteLine($"체력 {Math.Max(damge, 0)} 감소");
+                        continue;
 
                     }
                     else
@@ -536,6 +535,7 @@
                         Console.WriteLine($"골드 {goldReward} 획득");
                         Console.WriteLine($"추가 골드 {extraGold} 획득");
                         Console.WriteLine($"체력 {Math.Max(damge, 0)} 감소");
+                        continue;
                     }
                 }//던전기능
 
@@ -562,6 +562,7 @@
                 else
                 {
                     Console.WriteLine("\n잘못된 입력입니다. 마을로 돌아갑니다.");
+                    continue;
                 }
             }//게임 메뉴
         }
